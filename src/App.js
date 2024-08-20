@@ -9,7 +9,14 @@ function App() {
 
   let [logo, setLogo] = useState('ReactPortfolio');
   let [Title, setTitle] = useState(['테스트 제목 1','테스트 제목 2','테스트 제목 3']);
+  let [좋아요, 좋아요_수_변동] = useState(0);
 
+  function 함수() {
+    console.log('좋아요 버튼 클릭!')
+    // 좋아요 += 1;
+    좋아요_수_변동(좋아요 + 1)
+    
+  }
 
   return (
     <div className="App">
@@ -18,7 +25,7 @@ function App() {
       </div>
 
       <div className="list">
-        <h4> {Title[0]} </h4>
+        <h4> {Title[0]} <span onClick={함수}>❤️</span> {좋아요} </h4>
         <p>2월 17일 발행</p>
       </div>
 
