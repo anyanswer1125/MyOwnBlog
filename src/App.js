@@ -1,6 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
 import { useState } from 'react';
+import LoremIpsumImage from './LoremIpsum1.jpg';
+import LoremIpsumImage2 from './LoremIpsum2.png';
+import LoremIpsumImage3 from './LoremIpsum3.png';
+import LoremIpsumImage4 from './LoremIpsum4.png';
+import LoremIpsumImage5 from './LoremIpsum5.jpg';
+import LoremIpsumImage6 from './Loremipsum6.png';
 
 
 function App() {
@@ -30,23 +36,52 @@ function App() {
       <div className='lists-container'>
 
         <div className="list">
-          <h4> {Title[0]} <span onClick={함수} className='button'> ❤️ </span> {좋아요} </h4>
-          <p>2월 17일 발행</p>
+          <h4> {Title[0]}  </h4>
+          <img src={LoremIpsumImage} alt='Lorem1'></img>
+          <p>8월 21일 발행 <span onClick={함수} className='social_function'> ❤️ {좋아요}</span></p>
+        </div>
+                
+
+        <div className="list">
+          <h4> {Title[1]}  </h4>
+          <img src={LoremIpsumImage2} alt='Lorem1'></img>
+          <p>8월 21일 발행 <span onClick={함수} className='social_function'> ❤️ {좋아요}</span></p>
         </div>
 
         <div className="list">
-          <h4> {Title[1]} </h4>
-          <p>2월 17일 발행</p>
+          <h4> {Title[2]}  </h4>
+          <img src={LoremIpsumImage3} alt='Lorem1'></img>
+          <p>8월 21일 발행 <span onClick={함수} className='social_function'> ❤️ {좋아요}</span></p>
+        </div>
+
+      </div>
+      <div className='lists-container'>
+
+      <div className="list">
+          <h4> {Title[0]}  </h4>
+          <img src={LoremIpsumImage4} alt='Lorem1'></img>
+          <p>8월 21일 발행 <span onClick={함수} className='social_function'> ❤️ {좋아요}</span></p>
+        </div>
+                
+
+        <div className="list">
+          <h4> {Title[1]}  </h4>
+          <img src={LoremIpsumImage5} alt='Lorem1'></img>
+          <p>8월 21일 발행 <span onClick={함수} className='social_function'> ❤️ {좋아요}</span></p>
         </div>
 
         <div className="list">
-          <h4> {Title[2]} </h4>
-          <p>2월 17일 발행</p>
+          <h4> {Title[2]}  </h4>
+          <img src={LoremIpsumImage6} alt='Lorem1'></img>
+          <p>8월 21일 발행 <span onClick={함수} className='social_function'> ❤️ {좋아요}</span></p>
         </div>
 
       </div>
 
-
+      <footer className="footer">
+        <p>&copy; 2024 HWAI Portfolio. All rights reserved.</p>
+        <p>Contact: Lorem-ipsum@dolor.com</p>
+      </footer>
     </div>
   );
 }
