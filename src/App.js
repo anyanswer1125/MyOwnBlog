@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './App.css';
 import LoremIpsumImage from './LoremIpsum1.jpg';
 import LoremIpsumImage2 from './LoremIpsum2.png';
@@ -7,10 +7,27 @@ import LoremIpsumImage4 from './LoremIpsum4.png';
 import LoremIpsumImage5 from './LoremIpsum5.jpg';
 import LoremIpsumImage6 from './Loremipsum6.png';
 
+import SlideImg1 from './Slide1.png';
+import SlideImg2 from './Slide2.jpeg';
+import SlideImg3 from './Slide3.jpg';
+
 function App() {
   let [logo] = useState('HWAI Portfolio');
   let [Title] = useState(['테스트 제목 1', '테스트 제목 2', '테스트 제목 3', '테스트 제목 4', '테스트 제목 5', '테스트 제목 6']);
   let [좋아요, 좋아요_수_변동] = useState([41, 39, 37, 46, 182, 378]);
+  let [currentSlide, setCurrentSlide] = useState(0);
+  
+
+  const images = [SlideImg1, SlideImg2, SlideImg3]
+
+  useEffect(() => {
+    const slideInterval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % images.length);
+    }, 5000);
+
+    return () => clearInterval(slideInterval);
+  }, [images.length]);
+
 
   function 함수(index) {
     const 새로운좋아요 = [...좋아요];
@@ -25,7 +42,30 @@ function App() {
         <button>Click Me!</button>
       </div>
 
-      <div className='Banner'></div>
+      <div className='Banner'>
+        <div className="slider">
+          <div className="slider-wrapper" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+            {images.map((image, index) => (
+              <div className="slide" key={index}>
+                <img src={image} alt={`Slide ${index + 1}`} className="slider-image" />
+              </div>
+            ))}
+          </div>
+          <div className="controls">
+            <button onClick={() => setCurrentSlide((currentSlide - 1 + images.length) % images.length)}>&lt;</button>
+            <button onClick={() => setCurrentSlide((currentSlide + 1) % images.length)}>&gt;</button>
+          </div>
+          <div className="dots">
+            {images.map((_, index) => (
+              <span
+                key={index}
+                className={index === currentSlide ? "dot active" : "dot"}
+                onClick={() => setCurrentSlide(index)}
+              ></span>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <div className='content'>
         <div className='lists-container'>
