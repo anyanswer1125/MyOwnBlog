@@ -1,6 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:wght@400;600;700&family=Inter:wght@400;600;700&display=swap');
+
 .App {
   /* text-align: center; */
   /* padding-left: 20px; */
+}
+
+.nav {
+  font-family: 'Source Serif Pro', serif;
+  color: #525252;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20%;
+}
+
+.nav button {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  background-color: #363636;
+  color: white;
+  border: none;
+  width: 108px;
+  height: 30px;
+  margin: 25px 5px;
+  border-radius: 30px;
+}
+
+.nav button:hover {
+  cursor: pointer;
+  background-color: aliceblue;
+  border: solid;
+  color: #1D1D1D;
+}
+
+.Banner {
+  background-color: #1D1D1D;
+  margin-left: 20%;
+  margin-right: 20%;
+  width: auto;
+  height: 50vh;
+}
+
+.button:hover{
+  cursor: pointer;
 }
 
 .App-logo {
@@ -8,19 +51,21 @@
   pointer-events: none;
 }
 
-.black-nav {
-  background-color: black;
-  color: white;
-  width: 100%;
-  display: flex;
-  padding-left: 20px;
-}
 
 div {
   box-sizing: border-box;
 }
 
+.lists-container {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 100px 20%;
+}
+
 .list {
+  width: 30%;
+  margin: 0;
   border-bottom: 1px solid grey;
   padding-left: 20px;
 }
