@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import LoremIpsumImage from './LoremIpsum1.jpg';
 import LoremIpsumImage2 from './LoremIpsum2.png';
@@ -11,12 +11,18 @@ import SlideImg1 from './Slide1.png';
 import SlideImg2 from './Slide2.jpeg';
 import SlideImg3 from './Slide3.jpg';
 
+import CatImage from './Gnar.png'; // 대화 상자에 표시할 이미지 추가
+
 function App() {
   let [logo] = useState('HWAI Portfolio');
   let [Title] = useState(['테스트 제목 1', '테스트 제목 2', '테스트 제목 3', '테스트 제목 4', '테스트 제목 5', '테스트 제목 6']);
   let [좋아요, 좋아요_수_변동] = useState([41, 39, 37, 46, 182, 378]);
   let [currentSlide, setCurrentSlide] = useState(0);
-  
+  let [isBoxVisible, setIsBoxVisible] = useState(false); // 대화 상자 가시성 상태
+
+  const toggleBox = () => {
+    setIsBoxVisible(!isBoxVisible);
+  };
 
   const images = [SlideImg1, SlideImg2, SlideImg3]
 
@@ -28,7 +34,6 @@ function App() {
     return () => clearInterval(slideInterval);
   }, [images.length]);
 
-
   function 함수(index) {
     const 새로운좋아요 = [...좋아요];
     새로운좋아요[index] += 1;
@@ -39,7 +44,12 @@ function App() {
     <div className="App">
       <div className="nav">
         <h1>{logo}</h1>
-        <button>Click Me!</button>
+        <button onClick={toggleBox}>Click Me!</button>
+        {isBoxVisible && (
+          <div className="dialog-box">
+            <img src={CatImage} alt="Cat" className="dialog-image" />
+          </div>
+        )}
       </div>
 
       <div className='Banner'>
